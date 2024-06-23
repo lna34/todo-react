@@ -1,0 +1,8 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e1e1e;
+  color: #ccc;
+  min-height: 100vh; /* Ajouté pour garantir que le fond couvre toute la hauteur de l'écran */
+}
