@@ -1,11 +1,13 @@
 .todoItemContainer {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid;
 }
 
 .todoItem {
-  width: 80%;
+  max-width: 85%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .todoDelete,
@@ -19,14 +21,18 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s ease;
-  margin-left: auto;
 }
 
 .todoComplete {
   background-color: #66bb6a;
-  margin-right: -40px;
+  margin-right: 10px;
 }
 
 .todoDelete {
   background-color: red;
+}
+
+.todoActionsContainer {
+  display: flex;
+  margin-left: auto;
 }

@@ -17,15 +17,17 @@ export default function TodoItem({ item, todos, setTodos }) {
   return (
     <div className={styles.todoItemContainer}>
       <h3 className={styles.todoItem}>{item.value}</h3>
-      <button
-        onClick={() => completeTodo(item)}
-        className={styles.todoComplete}
-      >
-        <FontAwesomeIcon icon={faCheck} />
-      </button>
-      <button onClick={() => removeTodo(item)} className={styles.todoDelete}>
-        <FontAwesomeIcon icon={faTrash} />
-      </button>
+      <div className={styles.todoActionsContainer}>
+        <button
+          onClick={() => completeTodo(item)}
+          className={styles.todoComplete}
+        >
+          <FontAwesomeIcon icon={faCheck} />
+        </button>
+        <button onClick={() => removeTodo(item)} className={styles.todoDelete}>
+          <FontAwesomeIcon icon={faTrash} />
+        </button>
+      </div>
     </div>
   );
 }
