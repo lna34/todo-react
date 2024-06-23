@@ -8,7 +8,7 @@ export default function TodoContainer() {
   return (
     <>
       <TodoForm todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </>
   );
 }
