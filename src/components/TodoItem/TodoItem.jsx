@@ -7,10 +7,20 @@ export default function TodoItem({ item, todos, setTodos }) {
     setTodos(todos.filter((t) => t.id !== todo.id));
   }
 
+  function completeTodo(todo) {
+    const updatedTodos = todos.map((t) =>
+      t.id === todo.id ? { ...t, done: true } : t
+    );
+    setTodos(updatedTodos);
+  }
+
   return (
     <div className={styles.todoItemContainer}>
       <h3 className={styles.todoItem}>{item.value}</h3>
-      <button className={styles.todoComplete}>
+      <button
+        onClick={() => completeTodo(item)}
+        className={styles.todoComplete}
+      >
         <FontAwesomeIcon icon={faCheck} />
       </button>
       <button onClick={() => removeTodo(item)} className={styles.todoDelete}>

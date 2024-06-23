@@ -5,9 +5,16 @@ export default function TodoList({ todos, setTodos }) {
   return (
     <div className={styles.todoList}>
       <h2>Mes tâches en cours</h2>
-      {todos.map((item) => (
-        <TodoItem key={item.id} item={item} todos={todos} setTodos={setTodos} />
-      ))}
+      {todos
+        .filter((t) => !t.done)
+        .map((item) => (
+          <TodoItem
+            key={item.id}
+            item={item}
+            todos={todos}
+            setTodos={setTodos}
+          />
+        ))}
     </div>
   );
 }
